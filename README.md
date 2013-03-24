@@ -13,3 +13,7 @@ Use:
 mongorestore /var/data/mongo
 
 to recreate your database after vagrant destroy.
+
+# License
+
+This repository is release under the [MIT License](http://opensource.org/licenses/MIT)
