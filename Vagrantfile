@@ -10,7 +10,7 @@ Vagrant.configure("2") do |config|
 
   # config.vm.network :private_network, ip: "192.168.33.10"
 
-  # config.vm.synced_folder "../data", "/vagrant_data"
+	config.vm.synced_folder "./data", "/var/data", :create => true, :extra => 'dmode=777,fmode=777'
 
   # config.vm.provider :virtualbox do |vb|
   #   # Don't boot with headless mode
@@ -21,8 +21,10 @@ Vagrant.configure("2") do |config|
   # end
 	
 	
-  # config.vm.provision :puppet do |puppet|
-  #   puppet.manifests_path = "manifests"
-  #   puppet.manifest_file  = "centos64.pp"
-  # end
+	config.vm.provision :puppet do |puppet|
+		puppet.manifests_path = "puppet/manifests"
+		puppet.module_path = "puppet/modules"
+		puppet.manifest_file = "centos64.pp"
+		puppet.options = ["--verbose"]
+	end
 end
