@@ -12,6 +12,10 @@ cron { mongodump:
 			require => [File["/var/data/mongo"], Class["mongodb"]],
 }
 
+service { "iptables":
+					ensure => stopped,
+}
+
 class { "mongodb":
 	  enable_10gen => true,
 }
