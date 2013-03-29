@@ -11,9 +11,17 @@ package { "tomcat7":
 	  require => Notify["tomcat module"],
 }
 
+file {"/etc/sysconfig/tomcat7":
+  owner => root,
+  group => root,
+  mode => 644,
+  source => 'puppet:///modules/tomcat/tomcat7',
+  require => Package['tomcat7'],
+}
+
 service { "tomcat7":
 	  ensure => 'running',
-	  require => Package['tomcat7'],
+	  require => File['/etc/sysconfig/tomcat7'],
 }
 
 }
