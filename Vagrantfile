@@ -10,7 +10,7 @@ Vagrant.configure("2") do |config|
 
   config.vm.network :private_network, ip: "10.11.12.13"
 
-	config.vm.synced_folder "./data", "/var/data", :create => true, :extra => 'dmode=777,fmode=777'
+  config.vm.synced_folder "./data", "/var/data", :create => true, :extra => 'dmode=777,fmode=777'
 
   # config.vm.provider :virtualbox do |vb|
   #   # Don't boot with headless mode
