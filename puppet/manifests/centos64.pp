@@ -21,3 +21,5 @@ class { "mongodb":
 }
 
 class { "jdk": } 
+
+class { "tomcat": } 

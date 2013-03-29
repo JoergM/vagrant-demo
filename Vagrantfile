@@ -4,7 +4,7 @@
 Vagrant.configure("2") do |config|
   config.vm.box = "centos64"
 
-  config.vm.box_url = "https://www.dropbox.com/s/ydvy9f9n7soxlyo/centos64.box"
+  config.vm.box_url = "https://dl.dropbox.com/u/25767365/boxes/centos64.box"
 
   config.vm.network :forwarded_port, guest: 27017, host: 27017
 
