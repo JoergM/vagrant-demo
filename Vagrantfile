@@ -21,10 +21,9 @@ Vagrant.configure("2") do |config|
   # end
 	
 	
-	config.vm.provision :puppet do |puppet|
-		puppet.manifests_path = "puppet/manifests"
-		puppet.module_path = "puppet/modules"
-		puppet.manifest_file = "centos64.pp"
-#		puppet.options = ["--verbose"]
-	end
+  config.vm.provision :puppet do |puppet|
+    puppet.manifests_path = "puppet/manifests"
+    puppet.module_path = "puppet/modules"
+    puppet.manifest_file = "centos64.pp"
+  end
 end
